@@ -16,4 +16,10 @@ public class FileUtils {
 		return Files.readAllLines(new File(FileUtils.class.getClassLoader().getResource(fileName).getPath()).toPath());
 	}
 
+	public static String readStringFromFile(String fileName) throws IOException {
+		return new String(
+				Files.readAllBytes(new File(FileUtils.class.getClassLoader().getResource(fileName).getPath()).toPath()),
+				"UTF-8");
+	}
+
 }
